@@ -16,7 +16,7 @@ class StartBody extends StatelessWidget {
           ),
           const SizedBox(height: 50),
           const Text(
-            "Let's Play",
+            "chơi nào",
             style: TextStyle(
               color: Color.fromARGB(255, 39, 53, 122),
               fontSize: 20,
