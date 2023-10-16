@@ -22,7 +22,10 @@ class _EnglishState extends State<English> {
 
   @override
   Widget build(context) {
-    
+    Widget screenWidget = StartBody(switchScreen);
+    if (){
+      screenWidget= const QuestionsScreen()
+    }
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -36,9 +39,7 @@ class _EnglishState extends State<English> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen == 'start-screen'
-              ? StartBody(switchScreen)
-              : const QuestionsScreen(),
+          child: screenWidget,
         ),
       ),
     );
