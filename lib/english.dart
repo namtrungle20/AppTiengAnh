@@ -12,21 +12,17 @@ class English extends StatefulWidget {
 }
 
 class _EnglishState extends State<English> {
-  Widget? activeState;
-  @override
-  void initState() {
-    activeState = StartBody(switchScreen);
-    super.initState();
-  }
+  var activeScreen = 'start-screen';
 
   void switchScreen() {
     setState(() {
-      activeState = const QuestionsScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
   @override
   Widget build(context) {
+    
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -40,7 +36,9 @@ class _EnglishState extends State<English> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeState,
+          child: activeScreen == 'start-screen'
+              ? StartBody(switchScreen)
+              : const QuestionsScreen(),
         ),
       ),
     );
